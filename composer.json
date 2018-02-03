@@ -1,0 +1,18 @@
+{
+    "name": "trancended/api_product",
+    "description": "rest api for products",
+    "type": "microservice",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dariusz Lubiński",
+            "email": "lubinski.dariusz@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Trancended\\ApiProduct\\": "src/"
+        }
+    }
+}
