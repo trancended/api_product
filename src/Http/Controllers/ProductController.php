@@ -4,8 +4,7 @@ namespace Trancended\ApiProduct\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Trancended\ApiProduct\Product;
-use Trancended\ApiProduct\Http\Controllers\ApiController;
-use Trancended\ApiProduct\Http\Controllers\SearchController;
+use Trancended\ApiProduct\Http\Controllers\{ApiController, SearchController};
 
 class ProductController extends ApiController
 {
