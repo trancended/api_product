@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Trancended\ApiProduct;
 
@@ -7,7 +8,9 @@ use App\Exceptions\Handler;
 use Trancended\ApiProduct\Traits\ApiResponser;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Symfony\Component\HttpKernel\Exception\{HttpException, NotFoundHttpException, MethodNotAllowedHttpException};
+use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 class RestApiHandler extends Handler
 {
@@ -25,7 +28,6 @@ class RestApiHandler extends Handler
         $response = $this->handleException($request, $exception);
 
         return $response;
-
     }
 
     public function handleException($request, Exception $exception)
@@ -57,5 +59,4 @@ class RestApiHandler extends Handler
 
         return $this->errorResponse('Unexpected Exception. Try later', 500);
     }
-
 }

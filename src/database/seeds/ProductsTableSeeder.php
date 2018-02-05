@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
@@ -40,7 +41,7 @@ class ProductsTableSeeder extends Seeder
         Product::truncate();
         Product::flushEventListeners();
 
-        foreach(self::$products as $data){
+        foreach (self::$products as $data) {
             Product::create($data);
         }
     }

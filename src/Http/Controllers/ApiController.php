@@ -1,10 +1,12 @@
 <?php
+declare(strict_types=1);
 
 namespace Trancended\ApiProduct\Http\Controllers;
 
 use Trancended\ApiProduct\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Contracts\Debug\ExceptionHandler;
 use Trancended\ApiProduct\Traits\ApiResponser;
 use Trancended\ApiProduct\RestApiHandler;
 
@@ -14,12 +16,11 @@ class ApiController extends Controller
 
     public function __construct()
     {
-    	$this->middleware('api');
+        $this->middleware('api');
 
         \App::singleton(
-            \Illuminate\Contracts\Debug\ExceptionHandler::class,
+            ExceptionHandler::class,
             RestApiHandler::class
         );
     }
-
 }

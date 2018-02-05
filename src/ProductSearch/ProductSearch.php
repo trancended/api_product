@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Trancended\ApiProduct\ProductSearch;
 
@@ -71,5 +72,4 @@ class ProductSearch
     {
         return $query->get();
     }
-
 }
