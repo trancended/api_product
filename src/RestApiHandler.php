@@ -7,9 +7,7 @@ use App\Exceptions\Handler;
 use Trancended\ApiProduct\Traits\ApiResponser;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
-use Symfony\Component\HttpKernel\Exception\HttpException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\{HttpException, NotFoundHttpException, MethodNotAllowedHttpException};
 
 class RestApiHandler extends Handler
 {
