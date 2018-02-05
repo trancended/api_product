@@ -13,7 +13,7 @@ class ProductController extends ApiController
 	 * Show list od products
 	 *
 	 * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+	 * @return \Illuminate\Http\Response
 	 */
 	public function index(Request $request)
 	{
@@ -37,7 +37,7 @@ class ProductController extends ApiController
 	 * Create new product
 	 *
 	 * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+	 * @return \Illuminate\Http\Response
 	 */
 	public function store(Request $request)
 	{
@@ -57,7 +57,7 @@ class ProductController extends ApiController
 	 *
 	 * @param  \Illuminate\Http\Request  $request
 	 * @param  \Trancended\ApiProduct\Product  $product
-     * @return \Illuminate\Http\Response
+	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $request, Product $product)
 	{
@@ -77,6 +77,7 @@ class ProductController extends ApiController
 
 	/**
 	 * Delete product
+	 *
  	 * @param  \Trancended\ApiProduct\Product  $product
 	 * @return \Illuminate\Http\Response
 	 */
