@@ -26,7 +26,7 @@ class ProductController extends ApiController
 	 * Show product
 	 *
 	 * @param  \Trancended\ApiProduct\Product  $product
-     * @return \Illuminate\Http\Response
+	 * @return \Illuminate\Http\Response
 	 */
 	public function show(Product $product)
     {
