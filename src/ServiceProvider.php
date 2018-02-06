@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Routing\Router;
 
-class ApiProductServiceProvider extends ServiceProvider
+class ServiceProvider extends ServiceProvider
 {
     protected $defer = false;
     protected $namespace = 'Trancended\ApiProduct\Http\Controllers';
