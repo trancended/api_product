@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Trancended\ApiProduct;
 
@@ -27,7 +28,6 @@ class RestApiHandler extends Handler
         $response = $this->handleException($request, $exception);
 
         return $response;
-
     }
 
     public function handleException($request, Exception $exception)
@@ -59,5 +59,4 @@ class RestApiHandler extends Handler
 
         return $this->errorResponse('Unexpected Exception. Try later', 500);
     }
-
 }

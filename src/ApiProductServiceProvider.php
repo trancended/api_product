@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Trancended\ApiProduct;
 
@@ -40,20 +41,21 @@ class ApiProductServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom( __DIR__.'/../config/config.php', 'api_product');
+        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'api_product');
 
         $this->registerApiProduct();
     }
 
     private function registerApiProduct()
     {
-        $this->app->bind('api_product',function($app){
+        $this->app->bind('api_product', function ($app) {
             return new ApiProduct($app);
         });
     }
 
-    public function provides() {
-      return ['api_product'];
+    public function provides()
+    {
+        return ['api_product'];
     }
 
     public function map()
@@ -63,5 +65,4 @@ class ApiProductServiceProvider extends ServiceProvider
              ->namespace($this->namespace)
              ->group(__DIR__.'/Http/routes.php');
     }
-
 }

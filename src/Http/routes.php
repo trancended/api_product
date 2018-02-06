@@ -1,2 +1,2 @@
 <?php
-Route::resource('products', 'ProductController', ['only' => ['index', 'show', 'store', 'update', 'destroy']]);
+Route::resource('products', 'ProductController', ['except' => ['create', 'edit']]);

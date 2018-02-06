@@ -1,5 +1,5 @@
 # api_product
-rest api for products
+rest api for products - laravel package
 
 # Installation
 composer require trancended/api_product
