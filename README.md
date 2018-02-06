@@ -10,6 +10,6 @@ php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
 
 remember to set up the DB configuration
 
-php artisan migrate --class"Trancended\ApiProduct\Database\Migrations\CreateProductsTable"
+php artisan migrate
 
 php artisan db:seed --class="Trancended\ApiProduct\Database\Seeds\ProductsTableSeeder"
