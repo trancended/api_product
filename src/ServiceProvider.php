@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace Trancended\ApiProduct;
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Routing\Router;
 
-class ApiProductServiceProvider extends ServiceProvider
+class ServiceProvider extends RouteServiceProvider
 {
     protected $defer = false;
     protected $namespace = 'Trancended\ApiProduct\Http\Controllers';
@@ -19,17 +19,12 @@ class ApiProductServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
         $this->publishes([
             __DIR__.'/../config/config.php' => config_path('api_product.php'),
         ], 'api-config');
 
-        $this->publishes([
-            __DIR__ . '/database/migrations' => $this->app->databasePath() . '/migrations'
-        ], 'api-migrations');
-
-        $this->publishes([
-            __DIR__ . '/database/seeds' => $this->app->databasePath() . '/seeds'
-        ], 'api-product-seed');
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
         parent::boot();
     }

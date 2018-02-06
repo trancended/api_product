@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": "^7.1",
-        "laravel/framework": "5.5.*"
+        "laravel/framework": "5.5.*",
+        "barryvdh/laravel-cors": "^0.11.0"
     },
     "require-dev": {
     },
@@ -24,10 +25,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Trancended\\ApiProduct\\ApiProductServiceProvider"
+                "Trancended\\ApiProduct\\ServiceProvider"
             ],
             "aliases": {
-                "ApiProduct": "Trancended\\ApiProduct\\ApiProductFacade"
+                "ApiProduct": "Trancended\\ApiProduct\\Facade"
             }
         }
     }
