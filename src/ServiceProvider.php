@@ -19,17 +19,12 @@ class ServiceProvider extends RouteServiceProvider
      */
     public function boot()
     {
+
         $this->publishes([
             __DIR__.'/../config/config.php' => config_path('api_product.php'),
         ], 'api-config');
 
-        $this->publishes([
-            __DIR__ . '/database/migrations' => $this->app->databasePath() . '/migrations'
-        ], 'api-migrations');
-
-        $this->publishes([
-            __DIR__ . '/database/seeds' => $this->app->databasePath() . '/seeds'
-        ], 'api-product-seed');
+        $this->loadMigrationsFrom(__DIR__.'/database/migrations');
 
         parent::boot();
     }
