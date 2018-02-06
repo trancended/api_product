@@ -4,12 +4,12 @@ rest api for products - laravel package
 # Installation
 composer require trancended/api_product
 
-php artisan vendor:publish
-and select "Provider: Trancended\ApiProduct\ApiProductServiceProvider"
+php artisan vendor:publish --provider="Trancended\ApiProduct\ServiceProvider"
+
+php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
 
 remember to set up the DB configuration
 
-php artisan migrate
+php artisan migrate --class"Trancended\ApiProduct\Database\Migrations\CreateProductsTable"
 
-composer dump-autoload
-php artisan db:seed --class=ProductsTableSeeder
+php artisan db:seed --class="Trancended\ApiProduct\Database\Seeds\ProductsTableSeeder"
