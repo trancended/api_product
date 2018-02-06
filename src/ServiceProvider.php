@@ -4,10 +4,10 @@ declare(strict_types=1);
 namespace Trancended\ApiProduct;
 
 use Illuminate\Support\Facades\Route;
-use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider;
 use Illuminate\Routing\Router;
 
-class ServiceProvider extends ServiceProvider
+class ServiceProvider extends RouteServiceProvider
 {
     protected $defer = false;
     protected $namespace = 'Trancended\ApiProduct\Http\Controllers';
