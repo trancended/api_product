@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Trancended
- * Date: 2018-02-17
- * Time: 19:08
- */
+declare(strict_types=1);
 
 namespace Trancended\ApiProduct\Dictionaries;
 
