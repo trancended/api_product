@@ -5,7 +5,7 @@ namespace Trancended\ApiProduct\Database\Seeds;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
-use Trancended\ApiProduct\Product;
+use Trancended\ApiProduct\Repositories\Entities\Product;
 
 class ProductsTableSeeder extends Seeder
 {

@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Trancended\ApiProduct\Repositories;
 
 use Illuminate\Http\Request;
-use Trancended\ApiProduct\Product;
+use Trancended\ApiProduct\Repositories\Entities\Product;
 use Trancended\ApiProduct\Services\SearchService;
 
 class EloquentProduct implements ProductRepository

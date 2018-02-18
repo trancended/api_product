@@ -12,7 +12,6 @@ use Trancended\ApiProduct\Repositories\EloquentProduct;
 class ServiceProvider extends BaseProvider
 {
     protected $defer = false;
-    protected $namespace = 'Trancended\ApiProduct\Http\Controllers';
 
     /**
      * Perform post-registration booting of services.

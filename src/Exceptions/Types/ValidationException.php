@@ -5,7 +5,7 @@ namespace Trancended\ApiProduct\Exceptions\Types;
 
 use Illuminate\Validation\ValidationException as ExceptionType;
 use Trancended\ApiProduct\Dictionaries\Http;
-use Trancended\ApiProduct\Exceptions\AbstractException;
+use Trancended\ApiProduct\Exceptions\Types\AbstractException;
 
 class ValidationException extends AbstractException
 {

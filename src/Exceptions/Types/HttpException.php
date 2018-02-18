@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Trancended\ApiProduct\Exceptions\Types;
 
-use Trancended\ApiProduct\Exceptions\AbstractException;
+use Trancended\ApiProduct\Exceptions\Types\AbstractException;
 use Symfony\Component\HttpKernel\Exception\HttpException as ExceptionType;
 
 class HttpException extends AbstractException

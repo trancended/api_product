@@ -5,7 +5,7 @@ namespace Trancended\ApiProduct\Exceptions\Types;
 
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
-use Trancended\ApiProduct\Exceptions\AbstractException;
+use Trancended\ApiProduct\Exceptions\Types\AbstractException;
 use Trancended\ApiProduct\Dictionaries\Http;
 
 class NotFoundException extends AbstractException

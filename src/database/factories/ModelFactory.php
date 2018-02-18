@@ -1,6 +1,6 @@
 <?php
 
-use Trancended\ApiProduct\Product;
+use Trancended\ApiProduct\Repositories\Entities\Product;
 
 /*
 |--------------------------------------------------------------------------

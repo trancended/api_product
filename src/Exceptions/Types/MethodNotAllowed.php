@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Trancended\ApiProduct\Exceptions\Types;
 
 use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException as ExceptionType;
-use Trancended\ApiProduct\Exceptions\AbstractException;
+use Trancended\ApiProduct\Exceptions\Types\AbstractException;
 use Trancended\ApiProduct\Dictionaries\Http;
 
 class MethodNotAllowed extends AbstractException

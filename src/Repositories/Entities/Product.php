@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Trancended\ApiProduct;
+namespace Trancended\ApiProduct\Repositories\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Transformers\ProductTransformer;

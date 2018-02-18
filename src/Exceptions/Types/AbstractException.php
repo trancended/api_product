@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Trancended\ApiProduct\Exceptions;
+namespace Trancended\ApiProduct\Exceptions\Types;
 
 use Exception;
 use Trancended\ApiProduct\Exceptions\Types\ApiException;

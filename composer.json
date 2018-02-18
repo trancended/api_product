@@ -30,5 +30,7 @@
                 "ApiProduct": "Trancended\\ApiProduct\\Facade"
             }
         }
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
