@@ -24,10 +24,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Trancended\\ApiProduct\\ApiProductServiceProvider"
+                "Trancended\\ApiProduct\\ServiceProvider"
             ],
             "aliases": {
-                "ApiProduct": "Trancended\\ApiProduct\\ApiProductFacade"
+                "ApiProduct": "Trancended\\ApiProduct\\Facade"
             }
         }
     }

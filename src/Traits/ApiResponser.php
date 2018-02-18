@@ -44,8 +44,6 @@ trait ApiResponser
             return $this->successResponse($collection, $code);
         }
 
-        //$collection = $this->cacheResponse($collection);
-
         return $this->successResponse($collection, $code);
     }
 
@@ -69,26 +67,5 @@ trait ApiResponser
     protected function showMessage($message, $code = 200)
     {
         return $this->successResponse($message, $code);
-    }
-
-    /**
-     *
-     * @param array $data
-     * @return array
-     */
-    protected function cacheResponse($data)
-    {
-        $url = request()->url();
-        $queryParams = request()->query();
-
-        ksort($queryParams);
-
-        $queryString = http_build_query($queryParams);
-
-        $fullUrl = "{$url}?{$queryString}";
-
-        return Cache::remember($fullUrl, 30/60, function () use ($data) {
-            return $data;
-        });
     }
 }

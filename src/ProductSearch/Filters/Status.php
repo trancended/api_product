@@ -4,7 +4,7 @@ declare(strict_types=1);
 namespace Trancended\ApiProduct\ProductSearch\Filters;
 
 use Illuminate\Database\Eloquent\Builder;
-use Trancended\ApiProduct\Product;
+use Trancended\ApiProduct\Dictionaries\Product;
 
 class Status implements Filter
 {

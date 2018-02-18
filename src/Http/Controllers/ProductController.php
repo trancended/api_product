@@ -6,10 +6,26 @@ namespace Trancended\ApiProduct\Http\Controllers;
 use Illuminate\Http\Request;
 use Trancended\ApiProduct\Product;
 use Trancended\ApiProduct\Http\Controllers\ApiController;
-use Trancended\ApiProduct\Http\Controllers\SearchController;
+use Trancended\ApiProduct\Http\Requests\StoreProductPost;
+use Trancended\ApiProduct\Dictionaries\Http;
+use Trancended\ApiProduct\Repositories\ProductRepository;
 
 class ProductController extends ApiController
 {
+    /**
+     * @var ProductRepository
+     */
+    private $repository;
+
+    /**
+     *
+     * @param ProductRepository $repository
+     */
+    public function __construct(ProductRepository $repository)
+    {
+        parent::__construct();
+        $this->repository = $repository;
+    }
 
     /**
      * Show list od products
@@ -19,8 +35,8 @@ class ProductController extends ApiController
      */
     public function index(Request $request)
     {
-        $products = (new SearchController())->filter($request);
-        
+        $products = $this->repository->search($request);
+
         return $this->ShowAll($products);
     }
 
@@ -38,20 +54,14 @@ class ProductController extends ApiController
     /**
      * Create new product
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  StoreProductPost  $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(Request $request)
+    public function store(StoreProductPost $request)
     {
-        $rules = [
-            'name' => 'required',
-            'amount' => 'required',
-        ];
-        $this->validate($request, $rules);
+        $product = $this->repository->create($request->all());
 
-        $product = Product::create($request->all());
-
-        return $this->showOne($product, 201);
+        return $this->showOne($product, Http::HTTP_CREATED);
     }
 
     /**
@@ -63,16 +73,21 @@ class ProductController extends ApiController
      */
     public function update(Request $request, Product $product)
     {
-        $product->fill($request->only([
+        $attributes = $request->only([
             'name',
             'amount',
-        ]));
+        ]);
+
+        $product->fill($attributes);
 
         if ($product->isClean()) {
-            return $this->errorResponse('You need to specify any different value to update', 422);
+            return $this->errorResponse(
+                'You need to specify any different value to update',
+                Http::HTTP_UNPROCESSABLE_ENTITY
+            );
         }
 
-        $product->save();
+        $this->repository->update($product->getAttribute('id'), $attributes);
 
         return $this->showOne($product);
     }

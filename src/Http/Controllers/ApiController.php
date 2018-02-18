@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Trancended\ApiProduct\Traits\ApiResponser;
-use Trancended\ApiProduct\RestApiHandler;
+use Trancended\ApiProduct\Exceptions\Handler as RestApiHandler;
 
 class ApiController extends Controller
 {
@@ -16,8 +16,6 @@ class ApiController extends Controller
 
     public function __construct()
     {
-        $this->middleware('api');
-
         \App::singleton(
             ExceptionHandler::class,
             RestApiHandler::class
