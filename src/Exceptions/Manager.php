@@ -41,16 +41,10 @@ class Manager
     {
         foreach (self::$providers as $class) {
             $strategy = new $class($this->exception);
-            var_dump(get_class($this->exception));
-            var_dump($class);
-            var_dump($strategy->check());
             if ($strategy->check()) {
                 return $strategy;
             }
         }
-
-        var_dump($this->exception->getMessage());
-        die();
         return new UnexpectedException($this->exception);
     }
 }
