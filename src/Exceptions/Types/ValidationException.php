@@ -25,7 +25,7 @@ class ValidationException extends AbstractException
     /**
      * @return string
      */
-    public function getMessage():string
+    public function getMessage(): string
     {
         return $this->exception->validator->errors()->__toString();
     }

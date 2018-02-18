@@ -26,7 +26,7 @@ abstract class AbstractException implements ApiException
     /**
      * @return string
      */
-    public function getMessage():string
+    public function getMessage(): string
     {
         return $this->message;
     }
@@ -34,7 +34,7 @@ abstract class AbstractException implements ApiException
     /**
      * @return int
      */
-    public function getCode():int
+    public function getCode(): int
     {
         return $this->code;
     }
@@ -42,7 +42,7 @@ abstract class AbstractException implements ApiException
     /**
      * @return array
      */
-    public function getTypes():array
+    public function getTypes(): array
     {
         return $this->types;
     }
@@ -50,7 +50,7 @@ abstract class AbstractException implements ApiException
     /**
      * @return bool
      */
-    public function check():bool
+    public function check(): bool
     {
         foreach ($this->getTypes() as $type) {
             if ($this->exception instanceof $type) {

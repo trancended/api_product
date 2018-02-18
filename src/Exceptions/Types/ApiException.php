@@ -6,9 +6,9 @@ namespace Trancended\ApiProduct\Exceptions\Types;
 interface ApiException
 {
 
-    public function getMessage():string;
+    public function getMessage(): string;
 
-    public function getCode():int;
+    public function getCode(): int;
 
-    public function getTypes():array;
+    public function getTypes(): array;
 }

@@ -21,7 +21,7 @@ class Product extends Model
     /**
      * @param string $name
      */
-    public function setNameAttribute(string $name):void
+    public function setNameAttribute(string $name): void
     {
         $this->attributes['name'] = strtolower($name);
     }
@@ -30,7 +30,7 @@ class Product extends Model
      * @param string $name
      * @return string
      */
-    public function getNameAttribute(string $name):string
+    public function getNameAttribute(string $name): string
     {
         return ucwords($name);
     }

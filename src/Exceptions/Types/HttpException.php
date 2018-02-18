@@ -19,7 +19,7 @@ class HttpException extends AbstractException
     /**
      * @return string
      */
-    public function getMessage():string
+    public function getMessage(): string
     {
         return $this->exception->getMessage();
     }
@@ -27,7 +27,7 @@ class HttpException extends AbstractException
     /**
      * @return int
      */
-    public function getCode():int
+    public function getCode(): int
     {
         return $this->exception->getStatusCode();
     }
