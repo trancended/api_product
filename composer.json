@@ -21,6 +21,11 @@
             "Trancended\\ApiProduct\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Trancended\\ApiProduct\\Tests\\": "tests/"
+        }
+    },
     "extra": {
         "laravel": {
             "providers": [
