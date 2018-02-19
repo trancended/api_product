@@ -1,7 +1,7 @@
 <?php
 Route::group(
     [
-        'middleware' => ['api'],
+        'middleware' => ['api', 'Trancended\ApiProduct\Http\Middleware\Cors'],
         'prefix' => 'api/v1',
         'namespace' => 'Trancended\ApiProduct\Http\Controllers'],
     function () {
