@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace Trancended\ApiProduct\ProductSearch;
 
-use Trancended\ApiProduct\Product;
+use Trancended\ApiProduct\Repositories\Entities\Product;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\Builder;
 

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Trancended\ApiProduct;
+namespace Trancended\ApiProduct\Repositories\Entities;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Transformers\ProductTransformer;
@@ -10,20 +10,27 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Product extends Model
 {
 
-    const STATUS_UNAVAILABLE = 0;
-    const STATUS_AVAILABLE = 1;
-
+    /**
+     * @var array
+     */
     protected $fillable = [
         'name',
         'amount'
     ];
 
-    public function setNameAttribute($name)
+    /**
+     * @param string $name
+     */
+    public function setNameAttribute(string $name): void
     {
         $this->attributes['name'] = strtolower($name);
     }
 
-    public function getNameAttribute($name)
+    /**
+     * @param string $name
+     * @return string
+     */
+    public function getNameAttribute(string $name): string
     {
         return ucwords($name);
     }
