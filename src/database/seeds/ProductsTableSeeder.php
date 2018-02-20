@@ -1,8 +1,6 @@
 <?php
 declare(strict_types=1);
 
-namespace Trancended\ApiProduct\Database\Seeds;
-
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
 use Trancended\ApiProduct\Repositories\Entities\Product;

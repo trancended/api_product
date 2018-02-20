@@ -8,6 +8,7 @@ use Illuminate\Support\ServiceProvider as BaseProvider;
 use Illuminate\Routing\Router;
 use Trancended\ApiProduct\Repositories\ProductRepository;
 use Trancended\ApiProduct\Repositories\EloquentProduct;
+use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 
 class ServiceProvider extends BaseProvider
 {
@@ -23,6 +24,12 @@ class ServiceProvider extends BaseProvider
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
 
         $this->loadRoutesFrom(__DIR__ . '/Http/routes.php');
+
+        $this->registerEloquentFactoriesFrom(__DIR__ . '/database/factories');
+
+        $this->publishes([
+            __DIR__ . '/database/seeds' => $this->app->databasePath() . '/seeds'
+        ], 'api-product-seed');
     }
 
     /**
@@ -43,6 +50,18 @@ class ServiceProvider extends BaseProvider
             return new ApiProduct($app);
         });
     }
+
+    /**
+     * Register factory files.
+     *
+     * @param  string  $path
+     * @return void
+     */
+    protected function registerEloquentFactoriesFrom($path)
+    {
+        $this->app->make(EloquentFactory::class)->load($path);
+    }
+
 
     public function provides()
     {

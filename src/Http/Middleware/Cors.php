@@ -7,7 +7,8 @@ use Closure;
 use Illuminate\Http\Request;
 use Trancended\ApiProduct\Dictionaries\Http;
 
-class Cors {
+class Cors
+{
 
     /**
      * Handle an incoming request.
@@ -16,7 +17,8 @@ class Cors {
      * @param Closure  $next
      * @return mixed
      */
-    public function handle(Request $request, Closure $next) {
+    public function handle(Request $request, Closure $next)
+    {
         header("Access-Control-Allow-Origin: *");
 
         $headers = [
@@ -28,8 +30,9 @@ class Cors {
         }
 
         $response = $next($request);
-        foreach ($headers as $key => $value)
+        foreach ($headers as $key => $value) {
             $response->header($key, $value);
+        }
         return $response;
     }
 }
