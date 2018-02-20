@@ -17,21 +17,4 @@ class Product extends Model
         'name',
         'amount'
     ];
-
-    /**
-     * @param string $name
-     */
-    public function setNameAttribute(string $name): void
-    {
-        $this->attributes['name'] = strtolower($name);
-    }
-
-    /**
-     * @param string $name
-     * @return string
-     */
-    public function getNameAttribute(string $name): string
-    {
-        return ucwords($name);
-    }
 }

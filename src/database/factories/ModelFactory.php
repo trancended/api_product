@@ -1,6 +1,11 @@
 <?php
+declare(strict_types=1);
 
+namespace Trancended\ApiProduct\Factories;
+
+use Illuminate\Database\Eloquent\Factory as EloquentFactory;
 use Trancended\ApiProduct\Repositories\Entities\Product;
+use Faker\Generator as Faker;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +19,7 @@ use Trancended\ApiProduct\Repositories\Entities\Product;
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(Product::class, function (Faker\Generator $faker) {
+$factory->define(Product::class, function (Faker $faker) {
 
     return [
         'name' => $faker->word,
