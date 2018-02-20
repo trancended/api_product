@@ -13,3 +13,17 @@ php artisan migrate
 
 composer dump-autoload
 php artisan db:seed --class=ProductsTableSeeder
+
+# Tests
+
+In config/database.php file, set up sqlite configuration
+
+...
+'connections' => [
+
+    'sqlite_testing' => [
+        'driver' => 'sqlite',
+        'database' => ':memory:',
+        'prefix' => '',
+    ],
+
